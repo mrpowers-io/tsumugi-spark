@@ -2,9 +2,9 @@
 
 **_UNDER ACTIVE DEVELOPMENT_**
 
-[![python-client](https://github.com/SemyonSinchenko/tsumugi-spark/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/SemyonSinchenko/tsumugi-spark/actions/workflows/ci.yml)
+[![python-client](https://github.com/mrpowers-io/tsumugi-spark/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mrpowers-io/tsumugi-spark/actions/workflows/ci.yml)
 
-[Documentation](https://semyonsinchenko.github.io/tsumugi-spark/)
+[Documentation](https://mrpowers-io.github.io/tsumugi-spark/)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/SemyonSinchenko/tsumugi-spark/main/static/tsumugi-spark-logo.png" alt="tsumugi-shiraui" width="600" align="middle"/>
@@ -49,7 +49,7 @@ From a high-level perspective, Tsumugi implements three main components:
 
 The diagram below provides an overview of this concept:
 
-![](static/diagram.png)
+![](https://raw.githubusercontent.com/mrpowers-io/tsumugi-spark/refs/heads/main/static/diagram.png)
 
 ## Project structure
 
