@@ -97,7 +97,7 @@ poetry env use python3.10 # any version bigger than 3.10 should work
 poetry install --with dev # that install tsumugi as well as jupyter notebooks and pyspark[connect]
 ```
 
-Now you can run jupyter and try the example notebook (`tsumugi-python/examples/basic_example.ipynb`): [Notebook](https://github.com/SemyonSinchenko/tsumugi-spark/blob/main/tsumugi-python/examples/basic_example.ipynb)
+Now you can run jupyter and try the example notebook (`tsumugi-python/examples/basic_example.ipynb`): [Notebook](https://github.com/mrpowers-io/tsumugi-spark/blob/main/docs/notebooks/basic_example.ipynb)
 
 ### Server
 

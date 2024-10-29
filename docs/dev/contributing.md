@@ -106,7 +106,7 @@ To maintain a consistent style across all Python code, the following rules shoul
 1. All classes that wrap code generated from protobuf messages should be implemented as dataclasses, unless there is a compelling reason not to do so.
 2. Each of these classes should have a private method `_to_proto(self) -> "protobuf class"` that converts the dataclass to the proto-serializable class.
 
-## Runnign examples or testing clients
+## Running examples or testing clients
 
 To simplify testing and development, there is a script that builds a server plugin, downloads and unpacks the Spark distribution, and runs the Spark Connect Server with all the necessary configurations. To run it, use `make run_spark_server`. After that, the server will be available at `sc://localhost:15002`.
 
