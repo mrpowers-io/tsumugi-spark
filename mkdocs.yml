@@ -1,7 +1,7 @@
 site_name: Tsumugi
-site_url: "https://semyonsinchenko.github.io/tsumugi-spark/"
-repo_url: "https://github.com/semyonsinchenko/tsumugi-spark"
-repo_name: "semyonsinchenko/tsumugi-spark"
+site_url: "https://mrpowers-io.github.io/tsumugi-spark/"
+repo_url: "https://github.com/mrpowers-io/tsumugi-spark"
+repo_name: "mrpowers-io/tsumugi-spark"
 
 theme:
   name: material
@@ -56,6 +56,8 @@ nav:
   - Example Notebooks:
     - 'Basic usage': "notebooks/basic_example.ipynb"
     - 'Using predicates': "notebooks/using_where.ipynb"
+  - Contributing:
+    - 'Dev environment & code style': "dev/contributing.md"
 
 markdown_extensions:
     - markdown_include.include:
