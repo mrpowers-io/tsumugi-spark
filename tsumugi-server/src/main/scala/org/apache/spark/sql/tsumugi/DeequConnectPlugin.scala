@@ -4,8 +4,8 @@ package org.apache.spark.sql.tsumugi
 // Is there any way to create a DataFrame from LogicalPlan except using spark package?
 
 import com.google.protobuf.Any
-import com.ssinchenko.tsumugi.proto.VerificationSuite
-import com.ssinchenko.tsumugi.{DeequSuiteBuilder, DeequUtils}
+import io.mrpowers.tsumugi.proto.VerificationSuite
+import io.mrpowers.tsumugi.{DeequSuiteBuilder, DeequUtils}
 import org.apache.spark.sql.Dataset
 import org.apache.spark.sql.catalyst.plans.logical.LogicalPlan
 import org.apache.spark.sql.connect.planner.SparkConnectPlanner

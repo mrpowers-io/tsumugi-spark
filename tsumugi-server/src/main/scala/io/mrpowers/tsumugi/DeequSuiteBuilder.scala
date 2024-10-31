@@ -1,4 +1,4 @@
-package com.ssinchenko.tsumugi
+package io.mrpowers.tsumugi
 
 import com.amazon.deequ.analyzers._
 import com.amazon.deequ.anomalydetection._
@@ -8,7 +8,7 @@ import com.amazon.deequ.repository.{MetricsRepository, ResultKey}
 import com.amazon.deequ.repository.fs.FileSystemMetricsRepository
 import com.amazon.deequ.repository.sparktable.SparkTableMetricsRepository
 import com.amazon.deequ.{AnomalyCheckConfig, VerificationRunBuilder, VerificationRunBuilderWithRepository, VerificationSuite}
-import com.ssinchenko.tsumugi.proto.AnomalyDetection
+import io.mrpowers.tsumugi.proto.AnomalyDetection
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
@@ -16,7 +16,7 @@ import scala.jdk.CollectionConverters._
 import scala.util.{Failure, Success, Try}
 
 object DeequSuiteBuilder {
-  private[ssinchenko] def parseCheckLevel(checkLevel: proto.CheckLevel): CheckLevel.Value = {
+  private[mrpowers] def parseCheckLevel(checkLevel: proto.CheckLevel): CheckLevel.Value = {
     checkLevel match {
       case proto.CheckLevel.Error   => CheckLevel.Error
       case proto.CheckLevel.Warning => CheckLevel.Warning
@@ -24,7 +24,7 @@ object DeequSuiteBuilder {
     }
   }
 
-  private[ssinchenko] def parseSign[T: Numeric](reference: T, sign: proto.Check.ComparisonSign): T => Boolean = {
+  private[mrpowers] def parseSign[T: Numeric](reference: T, sign: proto.Check.ComparisonSign): T => Boolean = {
     sign match {
       case proto.Check.ComparisonSign.GET => (x: T) => implicitly[Numeric[T]].gteq(x, reference)
       case proto.Check.ComparisonSign.GT  => (x: T) => implicitly[Numeric[T]].gt(x, reference)
@@ -35,7 +35,7 @@ object DeequSuiteBuilder {
     }
   }
 
-  private[ssinchenko] def parseAnalyzerOptions(maybeOptions: Option[proto.AnalyzerOptions]): Option[AnalyzerOptions] = {
+  private[mrpowers] def parseAnalyzerOptions(maybeOptions: Option[proto.AnalyzerOptions]): Option[AnalyzerOptions] = {
     maybeOptions.map(opt =>
       AnalyzerOptions(
         opt.getNullBehaviour match {
@@ -53,7 +53,7 @@ object DeequSuiteBuilder {
     )
   }
 
-  private[ssinchenko] def parseAnalyzer(analyzer: proto.Analyzer) = {
+  private[mrpowers] def parseAnalyzer(analyzer: proto.Analyzer) = {
     analyzer.getAnalyzerCase match {
       case proto.Analyzer.AnalyzerCase.APPROX_COUNT_DISTINCT =>
         val protoAnalyzer = analyzer.getApproxCountDistinct
@@ -248,7 +248,7 @@ object DeequSuiteBuilder {
     }
   }
 
-  private[ssinchenko] def parseCheck(check: proto.Check): Check = {
+  private[mrpowers] def parseCheck(check: proto.Check): Check = {
     val constraints = check.getConstraintsList.asScala.map { constraint: proto.Check.Constraint =>
       {
         val analyzer = parseAnalyzer(constraint.getAnalyzer)
@@ -428,7 +428,7 @@ object DeequSuiteBuilder {
       case _ => throw new RuntimeException(s"Unsupported Strategy ${strategy.getStrategyCase.name}")
     }
   }
-  private[ssinchenko] def parseMetricRepository(spark: SparkSession, verificationSuite: proto.VerificationSuite): Try[MetricsRepository] = {
+  private[mrpowers] def parseMetricRepository(spark: SparkSession, verificationSuite: proto.VerificationSuite): Try[MetricsRepository] = {
     if (!verificationSuite.hasRepository) {
      Failure(new RuntimeException("For anomaly detection one of FS repository or Table repository should be provided!"))
     } else {

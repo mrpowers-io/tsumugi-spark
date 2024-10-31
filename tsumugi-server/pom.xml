@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.ssinchenko</groupId>
+    <groupId>io.mrpowers</groupId>
     <artifactId>tsumugi-server</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <name>${project.artifactId}</name>
     <description>SparkConnect Plugin for working with Amazon Deequ</description>
     <inceptionYear>2024</inceptionYear>
@@ -28,6 +28,7 @@
         <spark.version>3.5.2</spark.version>
         <scalatest.version>3.2.19</scalatest.version>
         <junit.version>1.10.2</junit.version>
+        <revision>1.0-SNAPSHOT</revision>
     </properties>
 
     <repositories>

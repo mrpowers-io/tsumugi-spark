@@ -1,4 +1,4 @@
-package com.ssinchenko.tsumugi
+package io.mrpowers.tsumugi
 
 import com.amazon.deequ.checks.CheckStatus
 import com.amazon.deequ.metrics.{Distribution, DistributionValue}
