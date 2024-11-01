@@ -1,4 +1,4 @@
-package com.ssinchenko.tsumugi
+package io.mrpowers.tsumugi
 
 import org.apache.spark.sql.types.{LongType, StringType, StructField, StructType}
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}

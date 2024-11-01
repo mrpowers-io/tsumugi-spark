@@ -1,4 +1,4 @@
-package com.ssinchenko.tsumugi
+package io.mrpowers.tsumugi
 
 import com.amazon.deequ.checks.{Check, CheckResult}
 import com.amazon.deequ.metrics.{DoubleMetric, HistogramMetric}
@@ -6,7 +6,7 @@ import com.amazon.deequ.{VerificationResult, VerificationRunBuilder}
 import org.apache.spark.sql.types.{IntegerType, StructField, StructType}
 import org.apache.spark.sql.{DataFrame, Row, SparkSession, functions => F}
 
-private[ssinchenko] case class MetricsAndChecks(
+private[mrpowers] case class MetricsAndChecks(
     level: String,
     checkDescription: String,
     constraintMessage: String,
@@ -69,7 +69,7 @@ object DeequUtils {
    *   DataFrame with a schema < level: string, checkDescription: string, constraintMessage: string, metricName: string,
    *   metricInstance: string, metricEntity: string, metricValue: string, status: string, constraint: string >
    */
-  private[ssinchenko] def checkResultAsDataFramePatched(
+  private[mrpowers] def checkResultAsDataFramePatched(
       deequSuite: VerificationResult,
       sparkSession: SparkSession
   ): DataFrame = {
@@ -88,7 +88,7 @@ object DeequUtils {
    *   data for computing row-level results
    * @return
    */
-  private[ssinchenko] def allResultsAsDataFrame(
+  private[mrpowers] def allResultsAsDataFrame(
       deequSuite: VerificationResult,
       returnRows: Boolean = false,
       sparkSession: SparkSession,

@@ -69,7 +69,7 @@ The file `tsumugi-server/src/main/scala/org/apache/spark/sql/tsumugi/DeequConnec
 
 ### Deequ Suite Builder
 
-The file `tsumugi-server/src/main/scala/com/ssinchenko/tsumugi/DeequSuiteBuilder.scala` contains code that creates Deequ objects from protobuf messages. It maps enums and constants to their corresponding Deequ counterparts, and generates `com.amazon.deequ` objects from the respective protobuf messages. The code ultimately returns a ready-to-use Deequ top-level structure.
+The file `tsumugi-server/src/main/scala/io/mrpowers/tsumugi/DeequSuiteBuilder.scala` contains code that creates Deequ objects from protobuf messages. It maps enums and constants to their corresponding Deequ counterparts, and generates `com.amazon.deequ` objects from the respective protobuf messages. The code ultimately returns a ready-to-use Deequ top-level structure.
 
 
 ## Getting Started
