@@ -286,11 +286,11 @@ class VerificationRunBuilder:
         if is_classic:
             jvm = spark._jvm
             jdf = self._data._jdf
-            deequ_jvm_suite = jvm.com.ssinchenko.tsumugi.DeequSuiteBuilder(
+            deequ_jvm_suite = jvm.io.mrpowers.tsumugi.DeequSuiteBuilder(
                 jdf,
                 pb_suite,
             )
-            result_jdf = jvm.com.ssinchenko.tsumugi.DeeqUtils.runAndCollectResults(
+            result_jdf = jvm.io.mrpowers.tsumugi.DeeqUtils.runAndCollectResults(
                 deequ_jvm_suite,
                 spark._jsparkSession,
                 self._compute_row_results,
