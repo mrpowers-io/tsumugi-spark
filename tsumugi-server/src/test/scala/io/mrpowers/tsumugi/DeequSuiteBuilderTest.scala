@@ -181,7 +181,8 @@ class DeequSuiteBuilderTest extends ConfTest {
                     .build()
                 )
             )
-        ).build()
+        )
+        .build()
     )
 
     val metric = VerificationSuite()
@@ -202,7 +203,7 @@ class DeequSuiteBuilderTest extends ConfTest {
       5
     )
     metric._1 match {
-      case analyzers.Histogram(_, _, _, _, _, analyzers.Histogram.Sum(aggColumn))  =>
+      case analyzers.Histogram(_, _, _, _, _, analyzers.Histogram.Sum(aggColumn)) =>
         assert(aggColumn == "numViews")
         assert(metric._2.value.get == expectedDistribution)
       case _ => fail(s"Expected ${analyzers.Histogram} with ${analyzers.Histogram.Sum} aggregate functions")
@@ -229,7 +230,8 @@ class DeequSuiteBuilderTest extends ConfTest {
                     .build()
                 )
             )
-        ).build()
+        )
+        .build()
     )
 
     val metric = VerificationSuite()
@@ -250,7 +252,8 @@ class DeequSuiteBuilderTest extends ConfTest {
     )
 
     metric._1 match {
-      case analyzers.Histogram(_, _, _, _, _, analyzers.Histogram.Count)  => assert(metric._2.value.get == expectedDistribution)
+      case analyzers.Histogram(_, _, _, _, _, analyzers.Histogram.Count) =>
+        assert(metric._2.value.get == expectedDistribution)
       case _ => fail(s"Expected ${analyzers.Histogram} with ${analyzers.Histogram.Count} aggregate functions")
     }
   }

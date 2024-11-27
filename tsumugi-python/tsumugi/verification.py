@@ -2,6 +2,7 @@ import os
 from dataclasses import asdict, dataclass
 
 import pandas as pd
+from py4j.java_gateway import JavaObject
 from pyspark.sql import DataFrame, SQLContext
 from pyspark.sql import functions as F
 from pyspark.sql.connect.client import SparkConnectClient
@@ -286,15 +287,10 @@ class VerificationRunBuilder:
         if is_classic:
             jvm = spark._jvm
             jdf = self._data._jdf
-            deequ_jvm_suite = jvm.io.mrpowers.tsumugi.DeequSuiteBuilder(
-                jdf,
-                pb_suite,
-            )
-            result_jdf = jvm.io.mrpowers.tsumugi.DeeqUtils.runAndCollectResults(
-                deequ_jvm_suite,
-                spark._jsparkSession,
-                self._compute_row_results,
-                jdf,
+            result_jdf: JavaObject = (
+                jvm.io.mrpowers.tsumugi.DeequSuiteBuilder.entryPoint(
+                    jdf, pb_suite.SerializeToString()
+                )
             )
             return VerificationResult(
                 DataFrame(result_jdf, SQLContext(spark.sparkContext))
