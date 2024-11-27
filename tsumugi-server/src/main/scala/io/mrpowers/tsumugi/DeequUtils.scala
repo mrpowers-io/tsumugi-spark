@@ -94,8 +94,10 @@ object DeequUtils {
       sparkSession: SparkSession,
       dataFrame: DataFrame
   ): DataFrame = {
-    val metrics = VerificationResult.successMetricsAsDataFrame(sparkSession = sparkSession, verificationResult = deequSuite)
-    val checks = VerificationResult.checkResultsAsDataFrame(sparkSession = sparkSession, verificationResult = deequSuite)
+    val metrics =
+      VerificationResult.successMetricsAsDataFrame(sparkSession = sparkSession, verificationResult = deequSuite)
+    val checks =
+      VerificationResult.checkResultsAsDataFrame(sparkSession = sparkSession, verificationResult = deequSuite)
     val checkResults = checkResultAsDataFramePatched(deequSuite = deequSuite, sparkSession = sparkSession)
 
     val oneRowDf =
@@ -111,7 +113,7 @@ object DeequUtils {
         withColumnFrom(df, from, ARRAY_COL, Option(alias))
       }
     if (returnRows) {
-     val rowResults = VerificationResult.rowLevelResultsAsDataFrame(
+      val rowResults = VerificationResult.rowLevelResultsAsDataFrame(
         sparkSession = sparkSession,
         verificationResult = deequSuite,
         data = dataFrame

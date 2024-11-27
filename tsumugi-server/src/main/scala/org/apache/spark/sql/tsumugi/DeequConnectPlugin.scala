@@ -18,21 +18,7 @@ class DeequConnectPlugin extends RelationPlugin {
       val spark = planner.sessionHolder.session
       val protoPlan = org.apache.spark.connect.proto.Plan.parseFrom(protoSuite.getData.toByteArray)
       val data = Dataset.ofRows(spark, planner.transformRelation(protoPlan.getRoot))
-      val verificationSuiteBuilder = DeequSuiteBuilder
-        .protoToVerificationSuite(
-          data,
-          protoSuite
-        )
-
-      // TODO: pass returnRows here
-      val resultDf =
-        DeequUtils.runAndCollectResults(
-          verificationSuiteBuilder.get,
-          spark,
-          returnRows = protoSuite.getComputeRowLevelResults,
-          dataFrame = data
-        )
-      Some(resultDf.logicalPlan)
+      Some(DeequSuiteBuilder.entryPoint(data, protoSuite).logicalPlan)
     } else {
       None
     }
