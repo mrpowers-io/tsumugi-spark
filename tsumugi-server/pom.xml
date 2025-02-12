@@ -216,6 +216,7 @@
                 <configuration>
                     <scala>
                         <scalafmt>
+                            <version>3.8.6</version>
                             <file>${project.basedir}/.scalafmt.conf</file>
                         </scalafmt>
                     </scala>
