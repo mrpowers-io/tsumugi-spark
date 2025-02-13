@@ -5,10 +5,10 @@ import subprocess
 import sys
 from pathlib import Path
 
-MVN_BUILD_COMMAND = ["mvn", "clean", "-DskipTests", "package"]
-SPARK_VERSION = "3.5.2"
+SBT_BUILD_COMMAND = ["sbt", "assemblyWithDeequ"]
+SPARK_VERSION = "3.5.4"
 SCALA_VERSION = "2.12"
-TSUMUGI_VERSION = "1.0-SNAPSHOT"
+TSUMUGI_VERSION = "0.1.0-SNAPSHOT"
 
 
 if __name__ == "__main__":
@@ -17,18 +17,18 @@ if __name__ == "__main__":
 
     print("Build Tsumugi...")
     os.chdir(scala_root)
-    build_mvn = subprocess.run(
-        MVN_BUILD_COMMAND,
+    build_sbt = subprocess.run(
+        SBT_BUILD_COMMAND,
         stdout=subprocess.PIPE,
         universal_newlines=True,
     )
 
-    if build_mvn.returncode == 0:
+    if build_sbt.returncode == 0:
         print("Done.")
     else:
-        print(f"MVN build return an error: {build_mvn.returncode}")
-        print("stdout: ", build_mvn.stdout)
-        print("stderr: ", build_mvn.stderr)
+        print(f"SBT build return an error: {build_sbt.returncode}")
+        print("stdout: ", build_sbt.stdout)
+        print("stderr: ", build_sbt.stderr)
         sys.exit(1)
 
     tmp_dir = prj_root.joinpath("tmp")
@@ -82,7 +82,9 @@ if __name__ == "__main__":
     os.chdir(spark_home)
 
     tsumugi_jar = (
-        scala_root.joinpath("target")
+        scala_root.joinpath("withDeequ")
+        .joinpath("target")
+        .joinpath(f"scala-{SCALA_VERSION}")
         .joinpath(f"tsumugi-server-{TSUMUGI_VERSION}.jar")
     )
     shutil.copyfile(tsumugi_jar, spark_home.joinpath(tsumugi_jar.name))
