@@ -36,4 +36,4 @@ jobs:
           
       - name: Build and Deploy
         run:
-          $(poetry env info --path -C ${{ github.workspace }}/tsumugi-python)/bin/mkdocs gh-deploy --force
+          $(poetry env info --path -C tsumugi-python/)/bin/mkdocs gh-deploy --force
