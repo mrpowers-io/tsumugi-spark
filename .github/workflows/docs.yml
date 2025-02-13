@@ -35,5 +35,8 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           
       - name: Build and Deploy
-        run:
-          poetry run -C ${{ github.workspace }}/tsumugi-python mkdocs gh-deploy --force
+        run: |
+          cd tsumugi-python
+          export VENV_ROOT=$(poetry env info --path)
+          cd ..
+          $VENV_ROOT/bin/mkdocs gh-deploy --force

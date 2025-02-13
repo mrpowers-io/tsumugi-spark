@@ -13,14 +13,20 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           architecture: x64
+          cache: sbt
+
+      - name: Set up SBT
+        uses: sbt/setup-sbt@v1
+        with:
+          sbt-runner-version: 1.9.9
 
       - name: Check codestyle
         run: |
-          mvn --no-transfer-progress spotless:check
+          sbt root/scalafmtCheckAll
         working-directory: tsumugi-server
 
       - name: Run tests
         run: |
-          mvn --no-transfer-progress test
+          sbt root/test
         working-directory: tsumugi-server
         

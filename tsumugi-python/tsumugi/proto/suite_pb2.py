@@ -22,7 +22,7 @@ _sym_db = _symbol_database.Default()
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x0bsuite.proto\x12\x1c\x63om.ssinchenko.tsumugi.proto\x1a\x0f\x61nalyzers.proto\x1a\x10strategies.proto\x1a\x10repository.proto"\xcd\x04\n\x05\x43heck\x12H\n\ncheckLevel\x18\x01 \x01(\x0e\x32(.com.ssinchenko.tsumugi.proto.CheckLevelR\ncheckLevel\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12P\n\x0b\x63onstraints\x18\x03 \x03(\x0b\x32..com.ssinchenko.tsumugi.proto.Check.ConstraintR\x0b\x63onstraints\x1a\xc9\x02\n\nConstraint\x12\x42\n\x08\x61nalyzer\x18\x01 \x01(\x0b\x32&.com.ssinchenko.tsumugi.proto.AnalyzerR\x08\x61nalyzer\x12+\n\x10long_expectation\x18\x02 \x01(\x03H\x00R\x0flongExpectation\x12/\n\x12\x64ouble_expectation\x18\x03 \x01(\x01H\x00R\x11\x64oubleExpectation\x12\x46\n\x04sign\x18\x04 \x01(\x0e\x32\x32.com.ssinchenko.tsumugi.proto.Check.ComparisonSignR\x04sign\x12\x17\n\x04hint\x18\x05 \x01(\tH\x01R\x04hint\x88\x01\x01\x12\x17\n\x04name\x18\x06 \x01(\tH\x02R\x04name\x88\x01\x01\x42\r\n\x0b\x65xpectationB\x07\n\x05_hintB\x07\n\x05_name":\n\x0e\x43omparisonSign\x12\x06\n\x02GT\x10\x00\x12\x07\n\x03GET\x10\x01\x12\x06\n\x02\x45Q\x10\x02\x12\x06\n\x02LT\x10\x03\x12\x07\n\x03LET\x10\x04"\xd9\x05\n\x10\x41nomalyDetection\x12t\n\x1a\x61nomaly_detection_strategy\x18\x01 \x01(\x0b\x32\x36.com.ssinchenko.tsumugi.proto.AnomalyDetectionStrategyR\x18\x61nomalyDetectionStrategy\x12\x42\n\x08\x61nalyzer\x18\x02 \x01(\x0b\x32&.com.ssinchenko.tsumugi.proto.AnalyzerR\x08\x61nalyzer\x12^\n\x06\x63onfig\x18\x03 \x01(\x0b\x32\x41.com.ssinchenko.tsumugi.proto.AnomalyDetection.AnomalyCheckConfigH\x00R\x06\x63onfig\x88\x01\x01\x1a\x9f\x03\n\x12\x41nomalyCheckConfig\x12>\n\x05level\x18\x01 \x01(\x0e\x32(.com.ssinchenko.tsumugi.proto.CheckLevelR\x05level\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12|\n\x0fwith_tag_values\x18\x03 \x03(\x0b\x32T.com.ssinchenko.tsumugi.proto.AnomalyDetection.AnomalyCheckConfig.WithTagValuesEntryR\rwithTagValues\x12"\n\nafter_date\x18\x04 \x01(\x03H\x00R\tafterDate\x88\x01\x01\x12$\n\x0b\x62\x65\x66ore_date\x18\x05 \x01(\x03H\x01R\nbeforeDate\x88\x01\x01\x1a@\n\x12WithTagValuesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\r\n\x0b_after_dateB\x0e\n\x0c_before_dateB\t\n\x07_config"\x9d\x04\n\x11VerificationSuite\x12\x17\n\x04\x64\x61ta\x18\x01 \x01(\x0cH\x00R\x04\x64\x61ta\x88\x01\x01\x12;\n\x06\x63hecks\x18\x02 \x03(\x0b\x32#.com.ssinchenko.tsumugi.proto.CheckR\x06\x63hecks\x12U\n\x12required_analyzers\x18\x03 \x03(\x0b\x32&.com.ssinchenko.tsumugi.proto.AnalyzerR\x11requiredAnalyzers\x12M\n\nrepository\x18\x04 \x01(\x0b\x32(.com.ssinchenko.tsumugi.proto.RepositoryH\x01R\nrepository\x88\x01\x01\x12K\n\nresult_key\x18\x05 \x01(\x0b\x32\'.com.ssinchenko.tsumugi.proto.ResultKeyH\x02R\tresultKey\x88\x01\x01\x12]\n\x12\x61nomaly_detections\x18\x06 \x03(\x0b\x32..com.ssinchenko.tsumugi.proto.AnomalyDetectionR\x11\x61nomalyDetections\x12\x39\n\x19\x63ompute_row_level_results\x18\x07 \x01(\x08R\x16\x63omputeRowLevelResultsB\x07\n\x05_dataB\r\n\x0b_repositoryB\r\n\x0b_result_key*$\n\nCheckLevel\x12\t\n\x05\x45rror\x10\x00\x12\x0b\n\x07Warning\x10\x01\x42\xd6\x01\n com.com.ssinchenko.tsumugi.protoB\nSuiteProtoH\x01P\x01Z\rtsumugi/proto\xa0\x01\x01\xa2\x02\x04\x43STP\xaa\x02\x1c\x43om.Ssinchenko.Tsumugi.Proto\xca\x02\x1c\x43om\\Ssinchenko\\Tsumugi\\Proto\xe2\x02(Com\\Ssinchenko\\Tsumugi\\Proto\\GPBMetadata\xea\x02\x1f\x43om::Ssinchenko::Tsumugi::Protob\x06proto3'
+    b'\n\x0bsuite.proto\x12\x19io.mrpowers.tsumugi.proto\x1a\x0f\x61nalyzers.proto\x1a\x10strategies.proto\x1a\x10repository.proto"\xc1\x04\n\x05\x43heck\x12\x45\n\ncheckLevel\x18\x01 \x01(\x0e\x32%.io.mrpowers.tsumugi.proto.CheckLevelR\ncheckLevel\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12M\n\x0b\x63onstraints\x18\x03 \x03(\x0b\x32+.io.mrpowers.tsumugi.proto.Check.ConstraintR\x0b\x63onstraints\x1a\xc3\x02\n\nConstraint\x12?\n\x08\x61nalyzer\x18\x01 \x01(\x0b\x32#.io.mrpowers.tsumugi.proto.AnalyzerR\x08\x61nalyzer\x12+\n\x10long_expectation\x18\x02 \x01(\x03H\x00R\x0flongExpectation\x12/\n\x12\x64ouble_expectation\x18\x03 \x01(\x01H\x00R\x11\x64oubleExpectation\x12\x43\n\x04sign\x18\x04 \x01(\x0e\x32/.io.mrpowers.tsumugi.proto.Check.ComparisonSignR\x04sign\x12\x17\n\x04hint\x18\x05 \x01(\tH\x01R\x04hint\x88\x01\x01\x12\x17\n\x04name\x18\x06 \x01(\tH\x02R\x04name\x88\x01\x01\x42\r\n\x0b\x65xpectationB\x07\n\x05_hintB\x07\n\x05_name":\n\x0e\x43omparisonSign\x12\x06\n\x02GT\x10\x00\x12\x07\n\x03GET\x10\x01\x12\x06\n\x02\x45Q\x10\x02\x12\x06\n\x02LT\x10\x03\x12\x07\n\x03LET\x10\x04"\xca\x05\n\x10\x41nomalyDetection\x12q\n\x1a\x61nomaly_detection_strategy\x18\x01 \x01(\x0b\x32\x33.io.mrpowers.tsumugi.proto.AnomalyDetectionStrategyR\x18\x61nomalyDetectionStrategy\x12?\n\x08\x61nalyzer\x18\x02 \x01(\x0b\x32#.io.mrpowers.tsumugi.proto.AnalyzerR\x08\x61nalyzer\x12[\n\x06\x63onfig\x18\x03 \x01(\x0b\x32>.io.mrpowers.tsumugi.proto.AnomalyDetection.AnomalyCheckConfigH\x00R\x06\x63onfig\x88\x01\x01\x1a\x99\x03\n\x12\x41nomalyCheckConfig\x12;\n\x05level\x18\x01 \x01(\x0e\x32%.io.mrpowers.tsumugi.proto.CheckLevelR\x05level\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12y\n\x0fwith_tag_values\x18\x03 \x03(\x0b\x32Q.io.mrpowers.tsumugi.proto.AnomalyDetection.AnomalyCheckConfig.WithTagValuesEntryR\rwithTagValues\x12"\n\nafter_date\x18\x04 \x01(\x03H\x00R\tafterDate\x88\x01\x01\x12$\n\x0b\x62\x65\x66ore_date\x18\x05 \x01(\x03H\x01R\nbeforeDate\x88\x01\x01\x1a@\n\x12WithTagValuesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\r\n\x0b_after_dateB\x0e\n\x0c_before_dateB\t\n\x07_config"\x8e\x04\n\x11VerificationSuite\x12\x17\n\x04\x64\x61ta\x18\x01 \x01(\x0cH\x00R\x04\x64\x61ta\x88\x01\x01\x12\x38\n\x06\x63hecks\x18\x02 \x03(\x0b\x32 .io.mrpowers.tsumugi.proto.CheckR\x06\x63hecks\x12R\n\x12required_analyzers\x18\x03 \x03(\x0b\x32#.io.mrpowers.tsumugi.proto.AnalyzerR\x11requiredAnalyzers\x12J\n\nrepository\x18\x04 \x01(\x0b\x32%.io.mrpowers.tsumugi.proto.RepositoryH\x01R\nrepository\x88\x01\x01\x12H\n\nresult_key\x18\x05 \x01(\x0b\x32$.io.mrpowers.tsumugi.proto.ResultKeyH\x02R\tresultKey\x88\x01\x01\x12Z\n\x12\x61nomaly_detections\x18\x06 \x03(\x0b\x32+.io.mrpowers.tsumugi.proto.AnomalyDetectionR\x11\x61nomalyDetections\x12\x39\n\x19\x63ompute_row_level_results\x18\x07 \x01(\x08R\x16\x63omputeRowLevelResultsB\x07\n\x05_dataB\r\n\x0b_repositoryB\r\n\x0b_result_key*$\n\nCheckLevel\x12\t\n\x05\x45rror\x10\x00\x12\x0b\n\x07Warning\x10\x01\x42\xc7\x01\n\x1d\x63om.io.mrpowers.tsumugi.protoB\nSuiteProtoH\x01P\x01Z\rtsumugi/proto\xa0\x01\x01\xa2\x02\x04IMTP\xaa\x02\x19Io.Mrpowers.Tsumugi.Proto\xca\x02\x19Io\\Mrpowers\\Tsumugi\\Proto\xe2\x02%Io\\Mrpowers\\Tsumugi\\Proto\\GPBMetadata\xea\x02\x1cIo::Mrpowers::Tsumugi::Protob\x06proto3'
 )
 
 _globals = globals()
@@ -32,31 +32,31 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals["DESCRIPTOR"]._loaded_options = None
     _globals[
         "DESCRIPTOR"
-    ]._serialized_options = b"\n com.com.ssinchenko.tsumugi.protoB\nSuiteProtoH\001P\001Z\rtsumugi/proto\240\001\001\242\002\004CSTP\252\002\034Com.Ssinchenko.Tsumugi.Proto\312\002\034Com\\Ssinchenko\\Tsumugi\\Proto\342\002(Com\\Ssinchenko\\Tsumugi\\Proto\\GPBMetadata\352\002\037Com::Ssinchenko::Tsumugi::Proto"
+    ]._serialized_options = b"\n\035com.io.mrpowers.tsumugi.protoB\nSuiteProtoH\001P\001Z\rtsumugi/proto\240\001\001\242\002\004IMTP\252\002\031Io.Mrpowers.Tsumugi.Proto\312\002\031Io\\Mrpowers\\Tsumugi\\Proto\342\002%Io\\Mrpowers\\Tsumugi\\Proto\\GPBMetadata\352\002\034Io::Mrpowers::Tsumugi::Proto"
     _globals[
         "_ANOMALYDETECTION_ANOMALYCHECKCONFIG_WITHTAGVALUESENTRY"
     ]._loaded_options = None
     _globals[
         "_ANOMALYDETECTION_ANOMALYCHECKCONFIG_WITHTAGVALUESENTRY"
     ]._serialized_options = b"8\001"
-    _globals["_CHECKLEVEL"]._serialized_start = 1966
-    _globals["_CHECKLEVEL"]._serialized_end = 2002
-    _globals["_CHECK"]._serialized_start = 99
-    _globals["_CHECK"]._serialized_end = 688
-    _globals["_CHECK_CONSTRAINT"]._serialized_start = 299
-    _globals["_CHECK_CONSTRAINT"]._serialized_end = 628
-    _globals["_CHECK_COMPARISONSIGN"]._serialized_start = 630
-    _globals["_CHECK_COMPARISONSIGN"]._serialized_end = 688
-    _globals["_ANOMALYDETECTION"]._serialized_start = 691
-    _globals["_ANOMALYDETECTION"]._serialized_end = 1420
-    _globals["_ANOMALYDETECTION_ANOMALYCHECKCONFIG"]._serialized_start = 994
-    _globals["_ANOMALYDETECTION_ANOMALYCHECKCONFIG"]._serialized_end = 1409
+    _globals["_CHECKLEVEL"]._serialized_start = 1921
+    _globals["_CHECKLEVEL"]._serialized_end = 1957
+    _globals["_CHECK"]._serialized_start = 96
+    _globals["_CHECK"]._serialized_end = 673
+    _globals["_CHECK_CONSTRAINT"]._serialized_start = 290
+    _globals["_CHECK_CONSTRAINT"]._serialized_end = 613
+    _globals["_CHECK_COMPARISONSIGN"]._serialized_start = 615
+    _globals["_CHECK_COMPARISONSIGN"]._serialized_end = 673
+    _globals["_ANOMALYDETECTION"]._serialized_start = 676
+    _globals["_ANOMALYDETECTION"]._serialized_end = 1390
+    _globals["_ANOMALYDETECTION_ANOMALYCHECKCONFIG"]._serialized_start = 970
+    _globals["_ANOMALYDETECTION_ANOMALYCHECKCONFIG"]._serialized_end = 1379
     _globals[
         "_ANOMALYDETECTION_ANOMALYCHECKCONFIG_WITHTAGVALUESENTRY"
-    ]._serialized_start = 1314
+    ]._serialized_start = 1284
     _globals[
         "_ANOMALYDETECTION_ANOMALYCHECKCONFIG_WITHTAGVALUESENTRY"
-    ]._serialized_end = 1378
-    _globals["_VERIFICATIONSUITE"]._serialized_start = 1423
-    _globals["_VERIFICATIONSUITE"]._serialized_end = 1964
+    ]._serialized_end = 1348
+    _globals["_VERIFICATIONSUITE"]._serialized_start = 1393
+    _globals["_VERIFICATIONSUITE"]._serialized_end = 1919
 # @@protoc_insertion_point(module_scope)
