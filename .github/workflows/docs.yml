@@ -36,4 +36,7 @@ jobs:
           
       - name: Build and Deploy
         run:
-          $(poetry env info --path -C tsumugi-python/)/bin/mkdocs gh-deploy --force
+          cd tsumugi-python
+          export VENV_ROOT=$(poetry env info --path)
+          cd ..
+          $VENV_ROOT/bin/mkdocs gh-deploy --force
