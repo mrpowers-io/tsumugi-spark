@@ -20,7 +20,7 @@ _sym_db = _symbol_database.Default()
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x10repository.proto\x12\x1c\x63om.ssinchenko.tsumugi.proto"\xc8\x01\n\nRepository\x12U\n\x0b\x66ile_system\x18\x01 \x01(\x0b\x32\x32.com.ssinchenko.tsumugi.proto.FileSystemRepositoryH\x00R\nfileSystem\x12U\n\x0bspark_table\x18\x02 \x01(\x0b\x32\x32.com.ssinchenko.tsumugi.proto.SparkTableRepositoryH\x00R\nsparkTableB\x0c\n\nrepository"*\n\x14\x46ileSystemRepository\x12\x12\n\x04path\x18\x01 \x01(\tR\x04path"5\n\x14SparkTableRepository\x12\x1d\n\ntable_name\x18\x01 \x01(\tR\ttableName"\xae\x01\n\tResultKey\x12!\n\x0c\x64\x61taset_date\x18\x01 \x01(\x03R\x0b\x64\x61tasetDate\x12\x45\n\x04tags\x18\x02 \x03(\x0b\x32\x31.com.ssinchenko.tsumugi.proto.ResultKey.TagsEntryR\x04tags\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\xdb\x01\n com.com.ssinchenko.tsumugi.protoB\x0fRepositoryProtoH\x01P\x01Z\rtsumugi/proto\xa0\x01\x01\xa2\x02\x04\x43STP\xaa\x02\x1c\x43om.Ssinchenko.Tsumugi.Proto\xca\x02\x1c\x43om\\Ssinchenko\\Tsumugi\\Proto\xe2\x02(Com\\Ssinchenko\\Tsumugi\\Proto\\GPBMetadata\xea\x02\x1f\x43om::Ssinchenko::Tsumugi::Protob\x06proto3'
+    b'\n\x10repository.proto\x12\x19io.mrpowers.tsumugi.proto"\xc2\x01\n\nRepository\x12R\n\x0b\x66ile_system\x18\x01 \x01(\x0b\x32/.io.mrpowers.tsumugi.proto.FileSystemRepositoryH\x00R\nfileSystem\x12R\n\x0bspark_table\x18\x02 \x01(\x0b\x32/.io.mrpowers.tsumugi.proto.SparkTableRepositoryH\x00R\nsparkTableB\x0c\n\nrepository"*\n\x14\x46ileSystemRepository\x12\x12\n\x04path\x18\x01 \x01(\tR\x04path"5\n\x14SparkTableRepository\x12\x1d\n\ntable_name\x18\x01 \x01(\tR\ttableName"\xab\x01\n\tResultKey\x12!\n\x0c\x64\x61taset_date\x18\x01 \x01(\x03R\x0b\x64\x61tasetDate\x12\x42\n\x04tags\x18\x02 \x03(\x0b\x32..io.mrpowers.tsumugi.proto.ResultKey.TagsEntryR\x04tags\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\xcc\x01\n\x1d\x63om.io.mrpowers.tsumugi.protoB\x0fRepositoryProtoH\x01P\x01Z\rtsumugi/proto\xa0\x01\x01\xa2\x02\x04IMTP\xaa\x02\x19Io.Mrpowers.Tsumugi.Proto\xca\x02\x19Io\\Mrpowers\\Tsumugi\\Proto\xe2\x02%Io\\Mrpowers\\Tsumugi\\Proto\\GPBMetadata\xea\x02\x1cIo::Mrpowers::Tsumugi::Protob\x06proto3'
 )
 
 _globals = globals()
@@ -30,17 +30,17 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals["DESCRIPTOR"]._loaded_options = None
     _globals[
         "DESCRIPTOR"
-    ]._serialized_options = b"\n com.com.ssinchenko.tsumugi.protoB\017RepositoryProtoH\001P\001Z\rtsumugi/proto\240\001\001\242\002\004CSTP\252\002\034Com.Ssinchenko.Tsumugi.Proto\312\002\034Com\\Ssinchenko\\Tsumugi\\Proto\342\002(Com\\Ssinchenko\\Tsumugi\\Proto\\GPBMetadata\352\002\037Com::Ssinchenko::Tsumugi::Proto"
+    ]._serialized_options = b"\n\035com.io.mrpowers.tsumugi.protoB\017RepositoryProtoH\001P\001Z\rtsumugi/proto\240\001\001\242\002\004IMTP\252\002\031Io.Mrpowers.Tsumugi.Proto\312\002\031Io\\Mrpowers\\Tsumugi\\Proto\342\002%Io\\Mrpowers\\Tsumugi\\Proto\\GPBMetadata\352\002\034Io::Mrpowers::Tsumugi::Proto"
     _globals["_RESULTKEY_TAGSENTRY"]._loaded_options = None
     _globals["_RESULTKEY_TAGSENTRY"]._serialized_options = b"8\001"
-    _globals["_REPOSITORY"]._serialized_start = 51
-    _globals["_REPOSITORY"]._serialized_end = 251
-    _globals["_FILESYSTEMREPOSITORY"]._serialized_start = 253
-    _globals["_FILESYSTEMREPOSITORY"]._serialized_end = 295
-    _globals["_SPARKTABLEREPOSITORY"]._serialized_start = 297
-    _globals["_SPARKTABLEREPOSITORY"]._serialized_end = 350
-    _globals["_RESULTKEY"]._serialized_start = 353
-    _globals["_RESULTKEY"]._serialized_end = 527
-    _globals["_RESULTKEY_TAGSENTRY"]._serialized_start = 472
-    _globals["_RESULTKEY_TAGSENTRY"]._serialized_end = 527
+    _globals["_REPOSITORY"]._serialized_start = 48
+    _globals["_REPOSITORY"]._serialized_end = 242
+    _globals["_FILESYSTEMREPOSITORY"]._serialized_start = 244
+    _globals["_FILESYSTEMREPOSITORY"]._serialized_end = 286
+    _globals["_SPARKTABLEREPOSITORY"]._serialized_start = 288
+    _globals["_SPARKTABLEREPOSITORY"]._serialized_end = 341
+    _globals["_RESULTKEY"]._serialized_start = 344
+    _globals["_RESULTKEY"]._serialized_end = 515
+    _globals["_RESULTKEY_TAGSENTRY"]._serialized_start = 460
+    _globals["_RESULTKEY_TAGSENTRY"]._serialized_end = 515
 # @@protoc_insertion_point(module_scope)
